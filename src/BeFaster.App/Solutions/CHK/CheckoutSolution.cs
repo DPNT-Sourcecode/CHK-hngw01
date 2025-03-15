@@ -167,15 +167,16 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         Price+=45;
                         GroupofferItems =0;
-                        groupOffer = groupOffer.Skip(3).ToDictionary(entry => entry.Key, entry => entry.Value);
                     }
                     else if(GroupofferItems > 3 && GroupofferItems %3 !=0)
                     {
                         Price+=45;
                         GroupofferItems-=3;
-                        groupOffer.Clear();
-                        groupOffer.Add(item.Key, GroupofferItems);
                     }
+                }
+                foreach(var entry in groupOffer.TakeLast(GroupofferItems))
+                {
+                    Price+= prices[entry.Key];
                 }
             
 
@@ -184,6 +185,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
