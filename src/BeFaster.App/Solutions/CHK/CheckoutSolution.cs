@@ -26,7 +26,7 @@ namespace BeFaster.App.Solutions.CHK
             prices.Add('H',10);
             prices.Add('I',35);
             prices.Add('J',60);
-            prices.Add('K',80);
+            prices.Add('K',70);
             prices.Add('L',90);
             prices.Add('M',15);
             prices.Add('N',40);
@@ -123,7 +123,7 @@ namespace BeFaster.App.Solutions.CHK
                     
                     count = item.Value  /2;
                     remainder = item.Value  %2;
-                    Price+= (count*150) + (remainder *80);
+                    Price+= (count*120) + (remainder *prices[item.Key]);
                 }
                 else if(item.Key == 'F')
                 {
@@ -157,12 +157,5 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
-
-
-
-
-
-
-
 
 
