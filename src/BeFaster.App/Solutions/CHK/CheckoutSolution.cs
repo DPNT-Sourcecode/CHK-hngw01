@@ -60,12 +60,12 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         FreeM +=1;
                     }
-                    if(skus[i] == 'N' && Amount[skus[i]] % 3 == 0)
+                    if(skus[i] == 'R' && Amount[skus[i]] % 3 == 0)
                     {
                         FreeQ +=1;
                     }
                 } 
-                else{
+                else{ 
                     Amount.Add(skus[i], 1);
                 }  
 
@@ -98,7 +98,7 @@ namespace BeFaster.App.Solutions.CHK
                      remainder = item.Value % 10;
                      whatsleft = remainder % 5;
 
-                    Price+= (count*200)  + ((remainder / 5)* 130) + (whatsleft *50);
+                    Price+= (count*200)  + ((remainder / 5)* 130) + (whatsleft *10);
                 }
                 else if(item.Key == 'B')
                 {
@@ -157,6 +157,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
