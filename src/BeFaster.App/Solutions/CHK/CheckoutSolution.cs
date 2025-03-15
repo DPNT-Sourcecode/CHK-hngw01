@@ -87,14 +87,14 @@ namespace BeFaster.App.Solutions.CHK
                 else if(item.Key == 'V')
                 {
                      count = item.Value / 3;
-                     remainder = item.Value % 2;
+                     remainder = item.Value % 3;
                      whatsleft = remainder % 2;
 
                     Price+= (count*130)  + ((remainder / 2)* 90) + (whatsleft *50);
                 }
                 else if(item.Key == 'H')
                 {
-                     count = item.Value / 10;
+                     count = item.Value / 10; 
                      remainder = item.Value % 10;
                      whatsleft = remainder % 5;
 
@@ -157,6 +157,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
