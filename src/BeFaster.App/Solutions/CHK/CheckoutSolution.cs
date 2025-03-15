@@ -7,10 +7,7 @@ namespace BeFaster.App.Solutions.CHK
     {
         public static int ComputePrice(string? skus)
         {
-            if(string.IsNullOrEmpty(skus))
-            {
-                return -1;
-            }
+
             Dictionary<char,int> prices = new Dictionary<char, int>();
             Dictionary<char,int> Amount = new Dictionary<char, int>();
             int Price = 0;
@@ -25,7 +22,7 @@ namespace BeFaster.App.Solutions.CHK
                 if(!prices.ContainsKey(skus[i]))
                 {
                     return -1;
-                }
+                } 
                 if(Amount.ContainsKey(skus[i]))
                 {
                     Amount[skus[i]] = Amount[skus[i]] + 1;
@@ -53,5 +50,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
