@@ -11,10 +11,12 @@ namespace BeFaster.App.Solutions.CHK
 
             Dictionary<char,int> prices = new Dictionary<char, int>();
             Dictionary<char,int> Amount = new Dictionary<char, int>();
+            Dictionary<char,int> groupOffer = new Dictionary<char, int>();
             int Price = 0;
             int FreeBee = 0;
             int FreeM = 0;
             int FreeQ = 0;
+
 
             prices.Add('A',50);
             prices.Add('B',30);
@@ -157,6 +159,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
