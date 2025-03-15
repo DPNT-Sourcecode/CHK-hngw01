@@ -14,6 +14,7 @@ namespace BeFaster.App.Solutions.CHK
             int Price = 0;
             int FreeBee = 0;
             int FreeM = 0;
+            int FreeQ = 0;
 
             prices.Add('A',50);
             prices.Add('B',30);
@@ -58,6 +59,10 @@ namespace BeFaster.App.Solutions.CHK
                     if(skus[i] == 'N' && Amount[skus[i]] % 3 == 0)
                     {
                         FreeM +=1;
+                    }
+                    if(skus[i] == 'N' && Amount[skus[i]] % 3 == 0)
+                    {
+                        FreeQ +=1;
                     }
                 } 
                 else{
@@ -116,6 +121,18 @@ namespace BeFaster.App.Solutions.CHK
                     count = item.Value - (item.Value / 3);
                     Price+= (count*10) ; 
                 }
+                else if(item.Key == 'P')
+                {
+                    count = item.Value /5;
+                    remainder = item.Value %5;
+                    Price+= (count * 200) + (remainder * 50);
+                }
+                else if(item.Key == 'Q')
+                {
+                    count = item.Value /3;
+                    remainder = item.Value %3;
+                    Price+= (count * 80) + (remainder * 30);
+                }
                 else{
                     Price+= (item.Value * prices[item.Key]);
                 }
@@ -126,6 +143,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
