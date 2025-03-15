@@ -152,7 +152,7 @@ namespace BeFaster.App.Solutions.CHK
                 }
                 else if(item.Key == 'S' || item.Key == 'T' || item.Key == 'X' || item.Key == 'Y' || item.Key == 'Z' )
                 {
-                    GroupofferItems +=1;
+                    GroupofferItems += item.Value;
                     if(GroupofferItems ==3)
                     {
                         Price+=45;
@@ -160,13 +160,9 @@ namespace BeFaster.App.Solutions.CHK
                         groupOffer.Clear();
                     }
                     else{
-                        if(groupOffer.ContainsKey(item.Key))
-                        {
-                            groupOffer[item.Key] +=1;
-                        }
-                        else{
-                            groupOffer.Add(item.Key, prices[item.Key]);
-                        }
+
+                            groupOffer.Add(item.Key, item.Value);
+
                     }
                 }
                 else{
@@ -184,6 +180,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
