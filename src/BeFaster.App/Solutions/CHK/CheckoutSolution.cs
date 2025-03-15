@@ -34,6 +34,10 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         FreeBee +=1;
                     }
+                    if(skus[i] == 'F' && Amount[skus[i]] % 2 == 0)
+                    {
+                        Amount[skus[i]] = Amount[skus[i]] + 1;
+                    }
                 } 
                 else{
                     Amount.Add(skus[i], 1);
@@ -71,6 +75,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
