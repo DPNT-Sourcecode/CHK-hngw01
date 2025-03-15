@@ -16,6 +16,7 @@ namespace BeFaster.App.Solutions.CHK
             int FreeBee = 0;
             int FreeM = 0;
             int FreeQ = 0;
+            int GroupofferItems = 0;
 
 
             prices.Add('A',50);
@@ -149,9 +150,33 @@ namespace BeFaster.App.Solutions.CHK
                     remainder = (item.Value - FreeQ) %3;
                     Price+= (count * 80) + (remainder * 30);
                 }
+                else if(item.Key == 'S' || item.Key == 'T' || item.Key == 'X' || item.Key == 'Y' || item.Key == 'Z' )
+                {
+                    GroupofferItems +=1;
+                    if(GroupofferItems ==3)
+                    {
+                        Price+=45;
+                        GroupofferItems =0;
+                        groupOffer.Clear();
+                    }
+                    else{
+                        if(groupOffer.ContainsKey(item.Key))
+                        {
+                            groupOffer[item.Key] +=1;
+                        }
+                        else{
+                            groupOffer.Add(item.Key, prices[item.Key]);
+                        }
+                    }
+                }
                 else{
                     Price+= (item.Value * prices[item.Key]);
                 }
+            }
+
+            foreach(var entry in groupOffer)
+            {
+                Price+= prices[entry.Key];
             }
 
 
@@ -159,6 +184,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
