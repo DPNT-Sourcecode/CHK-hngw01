@@ -13,6 +13,7 @@ namespace BeFaster.App.Solutions.CHK
             Dictionary<char,int> Amount = new Dictionary<char, int>();
             int Price = 0;
             int FreeBee = 0;
+            int FreeF = 0;
 
             prices.Add('A',50);
             prices.Add('B',30);
@@ -36,7 +37,7 @@ namespace BeFaster.App.Solutions.CHK
                     }
                     if(skus[i] == 'F' && Amount[skus[i]] % 2 == 0)
                     {
-                        Amount[skus[i]] = Amount[skus[i]] + 1;
+                        FreeF +=1;
                     }
                 } 
                 else{
@@ -65,6 +66,12 @@ namespace BeFaster.App.Solutions.CHK
                     remainder = (item.Value - FreeBee) %2;
                     Price+= (count*45) + (remainder *30);
                 }
+                else if(item.Key == 'F')
+                {
+                    count = (item.Value - FreeF) /2;
+                    remainder = (item.Value-FreeF) %2;
+                    Price+= 
+                }
                 else{
                     Price+= (item.Value * prices[item.Key]);
                 }
@@ -75,6 +82,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
