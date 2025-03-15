@@ -27,20 +27,9 @@ namespace BeFaster.App.Solutions.CHK
                 if(Amount.ContainsKey(skus[i]))
                 {
                     Amount[skus[i]] = Amount[skus[i]] + 1;
-                    if(skus[i] == 'A' && Amount[skus[i]] % 3 == 0)
+                    if(skus[i] == 'E' && Amount[skus[i]] % 2 == 0)
                     {
-                        Price = Price + 30;
-                    }
-                    else if(skus[i] == 'A' && Amount[skus[i]] % 5 == 0)
-                    {
-                        Price = Price +20;
-                    }
-                    else if(skus[i] == 'B' && Amount[skus[i]] % 2 == 0)
-                    { 
-                        Price = Price + 15;
-                    }
-                     else if(skus[i] == 'E' && Amount[skus[i]] % 2 == 0)
-                    {
+                        Amount[skus[i]] +=1;
                         Price = Price + prices[skus[i]];
                         if(Amount.ContainsKey('B'))
                         {
@@ -49,19 +38,15 @@ namespace BeFaster.App.Solutions.CHK
                         else{
                             Amount['B']+=1;
                         }
-                    }
-                    else{
-                       Price = Price + prices[skus[i]]; 
-                    }
-
                 }
                 else{
                     Amount.Add(skus[i], 1);
-                    Price = Price + prices[skus[i]];
                 }
-            }
-            return Price; 
-
+            } 
         }
+                    return Price;
     }
 }
+
+}
+
