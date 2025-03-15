@@ -23,7 +23,7 @@ namespace BeFaster.App.Solutions.CHK
                 }
                 if(Amount.ContainsKey(skus[i]))
                 {
-                    Amount[skus[i]] ++;
+                    Amount[skus[i]] = Amount[skus[i]] + 1;
                     if(skus[i] == 'A' && Amount[skus[i]] % 3 == 0)
                     {
                         Price = Price + 30;
@@ -50,7 +50,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
-
-
