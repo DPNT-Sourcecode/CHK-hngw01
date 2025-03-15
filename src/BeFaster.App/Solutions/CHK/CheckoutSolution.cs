@@ -1,4 +1,5 @@
-﻿using BeFaster.Runner.Exceptions;
+﻿using System.Formats.Asn1;
+using BeFaster.Runner.Exceptions;
 
 namespace BeFaster.App.Solutions.CHK
 {
@@ -32,14 +33,12 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         Price = Price + 30;
                     }
-                    else{
-                       Price = Price + prices[skus[i]]; 
-                    }
-                    if(skus[i] == 'B' && Amount[skus[i]] % 2 == 0)
+                    else if(skus[i] == 'B' && Amount[skus[i]] % 2 == 0)
                     {
                         Price = Price + 15;
                     }
-                        else{
+  
+                    else{
                        Price = Price + prices[skus[i]]; 
                     }
 
@@ -54,4 +53,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
