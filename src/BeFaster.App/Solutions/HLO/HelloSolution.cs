@@ -6,7 +6,14 @@ namespace BeFaster.App.Solutions.HLO
     {
         public static string Hello(string? friendName)
         {
-            throw new SolutionNotImplementedException();
+            if(String.IsNullOrWhiteSpace(friendName))
+            {
+                return "Hello World";
+            }
+            else{
+                return friendName;
+            }
         }
     }
 }
+
