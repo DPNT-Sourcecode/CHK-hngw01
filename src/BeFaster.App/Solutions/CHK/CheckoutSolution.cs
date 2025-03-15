@@ -16,6 +16,7 @@ namespace BeFaster.App.Solutions.CHK
             prices.Add('B',30);
             prices.Add('C',20);
             prices.Add('D',15);
+            prices.Add('E',40);
 
             for(int i = 0; i<skus.Length; i++)
             {
@@ -34,7 +35,11 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         Price = Price + 15;
                     }
-  
+                     else if(skus[i] == 'E' && Amount[skus[i]] % 2 == 0)
+                    {
+                        Price = Price + prices[skus[i]];
+                        Amount['B'] +=1;
+                    }
                     else{
                        Price = Price + prices[skus[i]]; 
                     }
@@ -50,3 +55,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
