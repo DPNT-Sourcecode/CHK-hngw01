@@ -18,6 +18,10 @@ namespace BeFaster.App.Solutions.CHK
 
             for(int i = 0; i<items.Length; i++)
             {
+                if(!prices.ContainsKey(items[i]))
+                {
+                    return -1;
+                }
                 if(Amount.ContainsKey(items[i]))
                 {
                     Amount[items[i]] ++;
@@ -32,7 +36,7 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         Price = Price + 15;
                     }
-                                        else{
+                        else{
                        Price = Price + prices[items[i]]; 
                     }
 
@@ -47,4 +51,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
