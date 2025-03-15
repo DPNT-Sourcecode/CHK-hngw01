@@ -1,4 +1,5 @@
 ﻿using System.Formats.Asn1;
+using Apache.NMS;
 using BeFaster.Runner.Exceptions;
 
 namespace BeFaster.App.Solutions.CHK
@@ -45,11 +46,36 @@ namespace BeFaster.App.Solutions.CHK
 
             }
 
+            foreach(var item in Amount)
+            {
+                int count;
+                int remainder;
+                int whatsleft;
+                if(item.Key == 'A')
+                {
+                     count = item.Value / 5;
+                     remainder = item.Value % 5;
+                     whatsleft = remainder % 3;
+
+                    Price+= (count*200)  + ((remainder / 3)* 130) + (whatsleft *50);
+                }
+                else if(item.Key == 'B')
+                {
+                    count = item.Value /2;
+                    remainder = item.Value %2;
+                    Price+= (count*45) + (remainder *30);
+                }
+                else{
+                    Price+= (item.Value * prices[item.Key]);
+                }
+            }
+
 
      return Price;
 }
     }
 }
+
 
 
 
