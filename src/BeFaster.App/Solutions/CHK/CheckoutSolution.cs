@@ -31,12 +31,12 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         Price = Price + 30;
                     }
-                    else if(skus[i] == 'A' && Amount[skus[i]] % 3 == 0)
+                    else if(skus[i] == 'A' && Amount[skus[i]] % 5 == 0)
                     {
                         Price = Price +20;
                     }
                     else if(skus[i] == 'B' && Amount[skus[i]] % 2 == 0)
-                    {
+                    { 
                         Price = Price + 15;
                     }
                      else if(skus[i] == 'E' && Amount[skus[i]] % 2 == 0)
@@ -65,6 +65,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
