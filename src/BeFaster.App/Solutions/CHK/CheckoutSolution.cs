@@ -70,7 +70,7 @@ namespace BeFaster.App.Solutions.CHK
                 {
                     count = (item.Value - FreeF) /2;
                     remainder = (item.Value-FreeF) %2;
-                    Price+= 
+                    Price+= (count*10) + (remainder*10);
                 }
                 else{
                     Price+= (item.Value * prices[item.Key]);
@@ -82,6 +82,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
