@@ -99,6 +99,7 @@ namespace BeFaster.App.Solutions.CHK
                     remainder = (item.Value - FreeBee) %2;
                     Price+= (count*45) + (remainder *30);
                 }
+                
                 else if(item.Key == 'M')
                 {
                     
@@ -121,6 +122,11 @@ namespace BeFaster.App.Solutions.CHK
                     count = item.Value - (item.Value / 3);
                     Price+= (count*10) ; 
                 }
+                else if(item.Key == 'U')
+                {
+                    count = item.Value - (item.Value / 4);
+                    Price+= (count*40) ; 
+                }
                 else if(item.Key == 'P')
                 {
                     count = item.Value /5;
@@ -129,8 +135,8 @@ namespace BeFaster.App.Solutions.CHK
                 }
                 else if(item.Key == 'Q')
                 {
-                    count = item.Value /3;
-                    remainder = item.Value %3;
+                    count = (item.Value - FreeQ) /3;
+                    remainder = (item.Value - FreeQ) %3;
                     Price+= (count * 80) + (remainder * 30);
                 }
                 else{
@@ -143,6 +149,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
