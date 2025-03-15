@@ -34,14 +34,14 @@ namespace BeFaster.App.Solutions.CHK
             prices.Add('P',50);
             prices.Add('Q',30);
             prices.Add('R',50);
-            prices.Add('S',30);
+            prices.Add('S',20);
             prices.Add('T',20);
             prices.Add('U',40);
             prices.Add('V',50);
             prices.Add('W',20);
-            prices.Add('X',90);
-            prices.Add('Y',10);
-            prices.Add('Z',50);
+            prices.Add('X',17);
+            prices.Add('Y',20);
+            prices.Add('Z',21);
 
             for(int i = 0; i<skus.Length; i++)
             {
@@ -157,5 +157,6 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
