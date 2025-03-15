@@ -45,11 +45,12 @@ namespace BeFaster.App.Solutions.CHK
                     Price = Price + prices[skus[i]];
                 }
             }
-            return Price;
+            return Price; 
 
         }
     }
 }
+
 
 
 
