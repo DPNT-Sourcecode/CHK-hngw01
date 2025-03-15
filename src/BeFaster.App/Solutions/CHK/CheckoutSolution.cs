@@ -12,6 +12,7 @@ namespace BeFaster.App.Solutions.CHK
             Dictionary<char,int> prices = new Dictionary<char, int>();
             Dictionary<char,int> Amount = new Dictionary<char, int>();
             int Price = 0;
+            int FreeBee = 0;
 
             prices.Add('A',50);
             prices.Add('B',30);
@@ -30,14 +31,7 @@ namespace BeFaster.App.Solutions.CHK
                     Amount[skus[i]] = Amount[skus[i]] + 1;
                     if(skus[i] == 'E' && Amount[skus[i]] % 2 == 0)
                     {
-                        Price = Price -30;
-                        if(Amount.ContainsKey('B'))
-                        {
-                            Amount['B']+=1;
-                        }
-                        else{
-                              Amount.Add('B',1);
-                        }
+                        FreeBee +=1;
                     }
                 } 
                 else{
@@ -75,5 +69,6 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
