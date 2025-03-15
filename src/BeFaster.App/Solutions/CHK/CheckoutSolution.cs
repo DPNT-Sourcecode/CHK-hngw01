@@ -159,16 +159,31 @@ namespace BeFaster.App.Solutions.CHK
                     Price+= (item.Value * prices[item.Key]);
                 }
             }
-
-            foreach(var entry in groupOffer)
+                groupOffer = groupOffer.OrderByDescending(entry => prices[entry.Key]).ToDictionary(entry => entry.Key , entry => entry.Value); 
+            foreach(var item in groupOffer)
             {
-                Price+= prices[entry.Key];
-            }
+                GroupofferItems += item.Value;
+                    if(GroupofferItems %3 == 0)
+                    {
+                        Price+=45;
+                        GroupofferItems =0;
+                        groupOffer = groupOffer.Skip(3).ToDictionary(entry => entry.Key, entry => entry.Value);
+                    }
+                    else if(GroupofferItems > 3 && GroupofferItems %3 !=0)
+                    {
+                        Price+=45;
+                        GroupofferItems-=3;
+                        groupOffer.Clear();
+                        groupOffer.Add(item.Key, GroupofferItems);
+                    }
+                }
+            
 
 
      return Price;
 }
     }
 }
+
 
 
