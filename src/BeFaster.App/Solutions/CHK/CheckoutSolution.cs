@@ -29,24 +29,28 @@ namespace BeFaster.App.Solutions.CHK
                     Amount[skus[i]] = Amount[skus[i]] + 1;
                     if(skus[i] == 'E' && Amount[skus[i]] % 2 == 0)
                     {
-                        Amount[skus[i]] +=1;
-                        Price = Price + prices[skus[i]];
+                        Price = Price -15;
                         if(Amount.ContainsKey('B'))
                         {
-                            Amount.Add('B',1);
-                        }
-                        else{
                             Amount['B']+=1;
                         }
-                }
+                        else{
+                              Amount.Add('B',1);
+                        }
+                    }
+                } 
                 else{
                     Amount.Add(skus[i], 1);
-                }
-            } 
-        }
-                    return Price;
+                }  
+
+            }
+
+
+     return Price;
+}
     }
 }
 
-}
+
+
 
