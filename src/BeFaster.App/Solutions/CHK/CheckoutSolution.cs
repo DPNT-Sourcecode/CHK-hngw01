@@ -45,7 +45,7 @@ namespace BeFaster.App.Solutions.CHK
             prices.Add('W',20);
             prices.Add('X',17);
             prices.Add('Y',20);
-            prices.Add('Z',21);
+            prices.Add('Z',20);
 
             for(int i = 0; i<skus.Length; i++)
             {
@@ -68,7 +68,7 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         FreeQ +=1;
                     }
-                } 
+                }  
                 else{ 
                     Amount.Add(skus[i], 1);
                 }  
@@ -188,6 +188,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
