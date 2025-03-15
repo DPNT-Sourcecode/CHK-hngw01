@@ -37,7 +37,7 @@ namespace BeFaster.App.Solutions.CHK
                     }
                     if(skus[i] == 'F' && Amount[skus[i]] % 2 == 0)
                     {
-                        FreeF +=1;
+                        Amount[skus[i]] = Amount[skus[i]] + 1;
                     }
                 } 
                 else{
@@ -68,9 +68,8 @@ namespace BeFaster.App.Solutions.CHK
                 }
                 else if(item.Key == 'F')
                 {
-                    count = (item.Value - FreeF) /2;
-                    remainder = (item.Value-FreeF) %2;
-                    Price+= (count*10) + (remainder*10);
+                    count = item.Value - (item.Value / 3);
+                    Price+= (count*10) ;
                 }
                 else{
                     Price+= (item.Value * prices[item.Key]);
@@ -82,5 +81,6 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
