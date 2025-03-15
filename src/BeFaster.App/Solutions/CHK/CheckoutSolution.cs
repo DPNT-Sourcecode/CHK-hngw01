@@ -21,6 +21,26 @@ namespace BeFaster.App.Solutions.CHK
             prices.Add('D',15);
             prices.Add('E',40);
             prices.Add('F',10);
+            prices.Add('G',20);
+            prices.Add('H',10);
+            prices.Add('I',35);
+            prices.Add('J',60);
+            prices.Add('K',80);
+            prices.Add('L',90);
+            prices.Add('M',15);
+            prices.Add('N',40);
+            prices.Add('O',10);
+            prices.Add('P',50);
+            prices.Add('Q',30);
+            prices.Add('R',50);
+            prices.Add('S',30);
+            prices.Add('T',20);
+            prices.Add('U',40);
+            prices.Add('V',50);
+            prices.Add('W',20);
+            prices.Add('X',90);
+            prices.Add('Y',10);
+            prices.Add('Z',50);
 
             for(int i = 0; i<skus.Length; i++)
             {
@@ -55,6 +75,14 @@ namespace BeFaster.App.Solutions.CHK
 
                     Price+= (count*200)  + ((remainder / 3)* 130) + (whatsleft *50);
                 }
+                if(item.Key == 'H')
+                {
+                     count = item.Value / 10;
+                     remainder = item.Value % 10;
+                     whatsleft = remainder % 5;
+
+                    Price+= (count*200)  + ((remainder / 3)* 130) + (whatsleft *50);
+                }
                 else if(item.Key == 'B')
                 {
                     
@@ -77,6 +105,7 @@ namespace BeFaster.App.Solutions.CHK
 }
     }
 }
+
 
 
 
